@@ -2466,7 +2466,8 @@ class DBManager:
 © 2025 闲鱼自动回复系统"""
 
             # 使用GET请求发送邮件
-            api_url = "https://dy.zhinianboke.com/api/emailSend"
+            # api_url = "https://dy.zhinianboke.com/api/emailSend"
+            api_url = ""
             params = {
                 'subject': subject,
                 'receiveUser': email,

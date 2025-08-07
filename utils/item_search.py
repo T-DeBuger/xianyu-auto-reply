@@ -917,7 +917,8 @@ async def get_item_detail_from_api(item_id: str) -> Optional[str]:
     """
     try:
         # 使用默认的API配置
-        api_base_url = 'https://selfapi.zhinianboke.com/api/getItemDetail'
+        # api_base_url = 'https://selfapi.zhinianboke.com/api/getItemDetail'
+        api_base_url = ''
         timeout_seconds = 10
 
         api_url = f"{api_base_url}/{item_id}"

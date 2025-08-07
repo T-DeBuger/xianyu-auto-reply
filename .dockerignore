@@ -27,6 +27,7 @@ wheels/
 MANIFEST
 
 # 虚拟环境
+xianyu-venv/
 venv/
 env/
 ENV/

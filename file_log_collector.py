@@ -213,28 +213,28 @@ def setup_file_logging():
     return collector
 
 
-if __name__ == "__main__":
-    # 测试文件日志收集器
-    collector = setup_file_logging()
-    
-    # 生成一些测试日志
-    from loguru import logger
-    
-    logger.info("文件日志收集器测试开始")
-    logger.debug("这是调试信息")
-    logger.warning("这是警告信息")
-    logger.error("这是错误信息")
-    logger.info("文件日志收集器测试结束")
-    
-    # 等待文件写入和监控
-    time.sleep(2)
-    
-    # 获取日志
-    logs = collector.get_logs(10)
-    print(f"收集到 {len(logs)} 条日志:")
-    for log in logs:
-        print(f"  [{log['level']}] {log['source']}: {log['message']}")
-    
-    # 获取统计信息
-    stats = collector.get_stats()
-    print(f"\n统计信息: {stats}")
+# if __name__ == "__main__":
+#     # 测试文件日志收集器
+#     collector = setup_file_logging()
+#
+#     # 生成一些测试日志
+#     from loguru import logger
+#
+#     logger.info("文件日志收集器测试开始")
+#     logger.debug("这是调试信息")
+#     logger.warning("这是警告信息")
+#     logger.error("这是错误信息")
+#     logger.info("文件日志收集器测试结束")
+#
+#     # 等待文件写入和监控
+#     time.sleep(2)
+#
+#     # 获取日志
+#     logs = collector.get_logs(10)
+#     print(f"收集到 {len(logs)} 条日志:")
+#     for log in logs:
+#         print(f"  [{log['level']}] {log['source']}: {log['message']}")
+#
+#     # 获取统计信息
+#     stats = collector.get_stats()
+#     print(f"\n统计信息: {stats}")

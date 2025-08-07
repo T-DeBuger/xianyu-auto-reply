@@ -559,7 +559,7 @@ class XianyuLive:
                 return ""
 
             # 从配置获取API地址和超时时间
-            api_base_url = auto_fetch_config.get('api_url', 'https://selfapi.zhinianboke.com/api/getItemDetail')
+            api_base_url = auto_fetch_config.get('api_url', '')
             timeout_seconds = auto_fetch_config.get('timeout', 10)
 
             api_url = f"{api_base_url}/{item_id}"
@@ -1263,11 +1263,11 @@ class XianyuLive:
 
             # 构建通知消息
             notification_msg = f"🚨 接收消息通知\n\n" \
-                             f"账号: {self.cookie_id}\n" \
-                             f"买家: {send_user_name} (ID: {send_user_id})\n" \
-                             f"商品ID: {item_id or '未知'}\n" \
-                             f"消息内容: {send_message}\n" \
-                             f"时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+                               f"账号: {self.cookie_id}  \n" \
+                               f"买家: {send_user_name} (ID: {send_user_id})  \n" \
+                               f"商品ID: {item_id or '未知'}  \n" \
+                               f"时间: {time.strftime('%Y-%m-%d %H:%M:%S')}  \n" \
+                               f"消息内容: {send_message}\n\n"
 
             # 发送通知到各个渠道
             for notification in notifications:
@@ -1327,7 +1327,8 @@ class XianyuLive:
                 return
 
             # 构建请求URL
-            api_url = "http://notice.zhinianblog.cn/sendPrivateMsg"
+            # api_url = "http://notice.zhinianblog.cn/sendPrivateMsg"
+            api_url = ""
             params = {
                 'qq': qq_number,
                 'msg': message
@@ -1569,13 +1570,11 @@ class XianyuLive:
                 return
 
             # 构造通知消息
-            notification_msg = f"""🔴 闲鱼账号Token刷新异常
-
-账号ID: {self.cookie_id}
-异常时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}
-异常信息: {error_message}
-
-请检查账号Cookie是否过期，如有需要请及时更新Cookie配置。"""
+            notification_msg = f"🔴 闲鱼账号Token刷新异常\n\n" \
+                               f"账号ID: {self.cookie_id}  \n" \
+                               f"异常时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}  \n" \
+                               f"异常信息: {error_message}\n\n" \
+                               f"请检查账号Cookie是否过期，如有需要请及时更新Cookie配置。\n\n"
 
             logger.info(f"准备发送Token刷新异常通知: {self.cookie_id}")
 

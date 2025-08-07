@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: xianyu-auto-reply:latest
+    image: tl/xianyu-auto-reply:latest
     container_name: xianyu-auto-reply
     restart: unless-stopped
     # 使用root用户避免权限问题

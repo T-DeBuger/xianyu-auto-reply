@@ -3,9 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-cn
-    image: xianyu-auto-reply:latest
+    image: registry.cn-hangzhou.aliyuncs.com/mozt/xianyu-auto-reply:latest
     container_name: xianyu-auto-reply
     restart: unless-stopped
+    platform: linux/amd64
     # 使用root用户避免权限问题
     user: "0:0"
     ports:

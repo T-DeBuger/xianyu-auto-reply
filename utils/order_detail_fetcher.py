@@ -350,23 +350,23 @@ async def fetch_order_detail_simple(order_id: str, cookie_string: str = None, he
 
 
 # 测试代码
-if __name__ == "__main__":
-    async def test():
-        # 测试订单ID
-        test_order_id = "2856024697612814489"
-        
-        print(f"🔍 开始获取订单详情: {test_order_id}")
-        
-        result = await fetch_order_detail_simple(test_order_id, headless=False)
-        
-        if result:
-            print("✅ 订单详情获取成功:")
-            print(f"📋 订单ID: {result['order_id']}")
-            print(f"🌐 URL: {result['url']}")
-            print(f"📄 页面标题: {result['title']}")
-            print(f"🛍️ SKU内容: {result['sku_content']}")
-        else:
-            print("❌ 订单详情获取失败")
-    
-    # 运行测试
-    asyncio.run(test())
+# if __name__ == "__main__":
+#     async def test():
+#         # 测试订单ID
+#         test_order_id = "2856024697612814489"
+#
+#         print(f"🔍 开始获取订单详情: {test_order_id}")
+#
+#         result = await fetch_order_detail_simple(test_order_id, headless=False)
+#
+#         if result:
+#             print("✅ 订单详情获取成功:")
+#             print(f"📋 订单ID: {result['order_id']}")
+#             print(f"🌐 URL: {result['url']}")
+#             print(f"📄 页面标题: {result['title']}")
+#             print(f"🛍️ SKU内容: {result['sku_content']}")
+#         else:
+#             print("❌ 订单详情获取失败")
+#
+#     # 运行测试
+#     asyncio.run(test())
