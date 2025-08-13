@@ -37,6 +37,7 @@ RUN apt-get update && \
         libfreetype6-dev \
         fonts-dejavu-core \
         fonts-liberation \
+        fonts-unifont \
         # Playwright浏览器依赖
         libnss3 \
         libnspr4 \
@@ -51,7 +52,7 @@ RUN apt-get update && \
         libasound2 \
         libatspi2.0-0 \
         libgtk-3-0 \
-        libgdk-pixbuf2.0-0 \
+        libgdk-pixbuf-xlib-2.0-0 \
         libxcursor1 \
         libxi6 \
         libxrender1 \
@@ -85,8 +86,9 @@ RUN pip install --no-cache-dir --upgrade pip -i https://pypi.tuna.tsinghua.edu.c
 COPY . .
 
 # 安装Playwright浏览器（必须在复制项目文件之后）
-RUN playwright install chromium && \
-    playwright install-deps chromium
+RUN playwright install chromium
+#RUN playwright install chromium && \
+#    playwright install-deps chromium
 
 # 创建必要的目录并设置权限
 RUN mkdir -p /app/logs /app/data /app/backups /app/static/uploads/images && \
