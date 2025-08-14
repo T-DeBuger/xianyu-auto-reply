@@ -3746,7 +3746,7 @@ class XianyuLive:
                         logger.info(f"【{self.cookie_id}】准备进入消息循环...")
 
                         async for message in websocket:
-                            logger.info(f"【{self.cookie_id}】收到WebSocket消息: {len(message) if message else 0} 字节")
+                            # logger.info(f"【{self.cookie_id}】收到WebSocket消息: {len(message) if message else 0} 字节")
                             try:
                                 message_data = json.loads(message)
 

@@ -303,12 +303,12 @@ async def log_requests(request, call_next):
     except Exception:
         pass
 
-    logger.info(f"🌐 {user_info} API请求: {request.method} {request.url.path}")
+    # logger.info(f"🌐 {user_info} API请求: {request.method} {request.url.path}")
 
     response = await call_next(request)
 
     process_time = time.time() - start_time
-    logger.info(f"✅ {user_info} API响应: {request.method} {request.url.path} - {response.status_code} ({process_time:.3f}s)")
+    # logger.info(f"✅ {user_info} API响应: {request.method} {request.url.path} - {response.status_code} ({process_time:.3f}s)")
 
     return response
 
