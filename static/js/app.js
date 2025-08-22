@@ -9827,42 +9827,42 @@ function exportSearchResults() {
  * 加载系统版本号并检查更新
  */
 async function loadSystemVersion() {
-    try {
-        // 从 version.txt 文件读取当前系统版本
-        let currentSystemVersion = 'v1.0.0'; // 默认版本
-
-        try {
-            const versionResponse = await fetch('/static/version.txt');
-            if (versionResponse.ok) {
-                currentSystemVersion = (await versionResponse.text()).trim();
-            }
-        } catch (e) {
-            console.warn('无法读取本地版本文件，使用默认版本');
-        }
-
-        // 显示当前版本
-        document.getElementById('versionNumber').textContent = currentSystemVersion;
-
-        // 获取远程版本并检查更新
-        const response = await fetch('http://xianyu.zhinianblog.cn/index.php?action=getVersion');
-        const result = await response.json();
-
-        if (result.error) {
-            console.error('获取版本号失败:', result.message);
-            return;
-        }
-
-        const remoteVersion = result.data;
-
-        // 检查是否有更新
-        if (remoteVersion !== currentSystemVersion) {
-            showUpdateAvailable(remoteVersion);
-        }
-
-    } catch (error) {
-        console.error('获取版本号失败:', error);
-        document.getElementById('versionNumber').textContent = '未知';
-    }
+    // try {
+    //     // 从 version.txt 文件读取当前系统版本
+    //     let currentSystemVersion = 'v1.0.0'; // 默认版本
+    //
+    //     try {
+    //         const versionResponse = await fetch('/static/version.txt');
+    //         if (versionResponse.ok) {
+    //             currentSystemVersion = (await versionResponse.text()).trim();
+    //         }
+    //     } catch (e) {
+    //         console.warn('无法读取本地版本文件，使用默认版本');
+    //     }
+    //
+    //     // 显示当前版本
+    //     document.getElementById('versionNumber').textContent = currentSystemVersion;
+    //
+    //     // 获取远程版本并检查更新
+    //     const response = await fetch('http://xianyu.zhinianblog.cn/index.php?action=getVersion');
+    //     const result = await response.json();
+    //
+    //     if (result.error) {
+    //         console.error('获取版本号失败:', result.message);
+    //         return;
+    //     }
+    //
+    //     const remoteVersion = result.data;
+    //
+    //     // 检查是否有更新
+    //     if (remoteVersion !== currentSystemVersion) {
+    //         showUpdateAvailable(remoteVersion);
+    //     }
+    //
+    // } catch (error) {
+    //     console.error('获取版本号失败:', error);
+    //     document.getElementById('versionNumber').textContent = '未知';
+    // }
 }
 
 /**
@@ -9898,22 +9898,22 @@ function showUpdateAvailable(newVersion) {
  * 获取更新信息
  */
 async function getUpdateInfo() {
-    try {
-        const response = await fetch('http://xianyu.zhinianblog.cn/index.php?action=getUpdateInfo');
-        const result = await response.json();
-
-        if (result.error) {
-            showToast('获取更新信息失败: ' + result.message, 'danger');
-            return null;
-        }
-
-        return result.data;
-
-    } catch (error) {
-        console.error('获取更新信息失败:', error);
-        showToast('获取更新信息失败', 'danger');
-        return null;
-    }
+    // try {
+    //     const response = await fetch('http://xianyu.zhinianblog.cn/index.php?action=getUpdateInfo');
+    //     const result = await response.json();
+    //
+    //     if (result.error) {
+    //         showToast('获取更新信息失败: ' + result.message, 'danger');
+    //         return null;
+    //     }
+    //
+    //     return result.data;
+    //
+    // } catch (error) {
+    //     console.error('获取更新信息失败:', error);
+    //     showToast('获取更新信息失败', 'danger');
+    //     return null;
+    // }
 }
 
 /**
