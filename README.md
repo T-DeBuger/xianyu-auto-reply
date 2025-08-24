@@ -1,9 +1,13 @@
-# 🐟 闲鱼自动回复系统  （另外提供cursor pro 14天试用账号，物美价廉，欢迎联系）
+# 🐟 闲鱼自动回复系统
 
 [![GitHub](https://img.shields.io/badge/GitHub-zhinianboke%2Fxianyu--auto--reply-blue?logo=github)](https://github.com/zhinianboke/xianyu-auto-reply)
 [![Docker](https://img.shields.io/badge/Docker-一键部署-blue?logo=docker)](https://github.com/zhinianboke/xianyu-auto-reply#-快速开始)
 [![Python](https://img.shields.io/badge/Python-3.11+-green?logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-仅供学习-red.svg)](#️-版权声明与使用条款)
+
+## 最新代码获取地址
+
+我用夸克网盘给你分享了「自动发货系统源码」，点击链接或复制整段内容，打开「夸克APP」即可获取。 /~5e4237vG5B~:/ 链接：https://pan.quark.cn/s/88d118bd700e
 
 > **⚠️ 重要提示：本项目仅供学习研究使用，严禁商业用途！使用前请仔细阅读[版权声明](#️-版权声明与使用条款)。**
 
@@ -690,6 +694,9 @@ powershell -ExecutionPolicy Bypass -File docker-deploy.bat
 ### 💬 交流群组
 
 欢迎加入我们的技术交流群，获取实时帮助和最新更新：
+
+#### 闲鱼官方闲置群
+<img src="static/xianyu-group.png" alt="闲鱼官方闲置群二维码" width="200">
 
 #### 微信交流群
 <img src="static/wechat-group.png" alt="微信群二维码" width="200">
