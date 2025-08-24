@@ -2367,7 +2367,7 @@ class XianyuLive:
             notification_msg = f"🔴 闲鱼账号Token刷新异常\n\n" \
                                f"账号ID: {self.cookie_id}  \n" \
                                f"异常时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}  \n" \
-                               f"异常信息: {error_message}\n\n" \
+                               f"异常信息: {error_message}  \n" \
                                f"请检查账号Cookie是否过期，如有需要请及时更新Cookie配置。\n\n"
 
             logger.info(f"准备发送Token刷新异常通知: {self.cookie_id}")
@@ -2519,16 +2519,15 @@ class XianyuLive:
                 return
 
             # 构造通知消息
-            notification_message = f"🚨 自动发货通知\n\n" \
-                                 f"账号: {self.cookie_id}\n" \
-                                 f"买家: {send_user_name} (ID: {send_user_id})\n" \
-                                 f"商品ID: {item_id}\n" \
-                                 f"聊天ID: {chat_id or '未知'}\n" \
-                                 f"结果: {error_message}\n" \
-                                 f"时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n" \
-                                 f"请及时处理！"
+            notification_message = f"📦 自动发货通知\n\n" \
+                                 f"账号: {self.cookie_id}  \n" \
+                                 f"买家: {send_user_name} (ID: {send_user_id})  \n" \
+                                 f"商品ID: {item_id}  \n" \
+                                 f"聊天ID: {chat_id or '未知'}  \n" \
+                                 f"时间: {time.strftime('%Y-%m-%d %H:%M:%S')}  \n" \
+                                 f"结果: {error_message}\n\n"
 
-            # 发送通知到所有已启用的通知渠道
+                # 发送通知到所有已启用的通知渠道
             for notification in notifications:
                 if notification.get('enabled', False):
                     channel_type = notification.get('channel_type', 'qq')
